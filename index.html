@@ -5,30 +5,59 @@
     <meta charset="UTF-8" />
     <title>Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
 
 </head>
 
 <body class="bg-black text-white overflow-hidden">
 
     <!-- background -->
-    <div id="particles-js" class="fixed inset-0 z-0"></div>
+    <div id="particles-js" class="fixed inset-0 z-0 pointer-events-auto"></div>
+
 
     <!-- navbar -->
-    <div id="navbar"></div>
+    <div id="navbar" class="relative z-20 pointer-events-auto"></div>
 
 
     <!-- content -->
-    <div class="relative z-10 min-h-screen flex items-center justify-center pointer-events-none">
-        <div class="text-center space-y-4">
-            <h1 class="text-5xl font-bold">Welcome to "THE" Site </h1>
-            <p class="text-lg text-gray-300">
-                P
+    <div class="relative z-10 min-h-screen flex justify-center pointer-events-none">
+        <div class="mt-40 max-w-4xl text-center px-4 pointer-events-none">
+            <h1 class="text-4xl font-bold font-sono pointer-events-none">Hello! 🖖 My name is Rajat </h1>
+            <p class="mt-10 text-lg font-sono text-wrap pointer-events-none">I am a <span
+                    class="text-red-500 font-sono">software
+                    developer</span> specializing in <span class="text-blue-500 font-tektur">backend development</span>
+                and
+                <span class="text-yellow-500 font-tektur">frontend development</span>. I have a passion for creating
+                shit and exploring new technologies.
+            </p>
+            <p class="mt-12 text-md font-sono text-gray-300 font-sono pointer-events-none">Explore my
+                <span>
+                    projects <a href="/projects.html"
+                        class="underline text-blue-400 hover:text-blue-600 font-sono cursor-pointer text-green-500 pointer-events-auto">here</a>.
+                </span>
+                checkout my
+                <span>
+                    resume <a href="/resume.pdf"
+                        class="text-blue-400 hover:text-blue-600 font-sono text-red-500 underline font-extrabold pointer-events-auto">here</a>.
+                </span>
+            </p>
+
+            <p class="pt-10 font text-gray-300 text-md font-sono pointer-events-none">
+                Hit me up via <a href="/resume.pdf"
+                    class="hover:text-blue-400 underline pointer-events-auto">Twitter</a>, <a href="/resume.pdf"
+                    class="hover:text-blue-400 underline pointer-events-auto">Github</a>,
+                <a href="/resume.pdf" class="hover:text-blue-400 underline pointer-events-auto">LinkedIn</a> or <a
+                    href="/resume.pdf" class="hover:text-blue-400 underline pointer-events-auto">Twitter</a>.
+                    let's have some chit-chat!
             </p>
         </div>
     </div>
@@ -52,12 +81,14 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sono: ['"Sono"', 'monospace']
-                    }
-                }
-            }
+                        sono: ['"Sono"', 'monospace'],
+                        tektur: ['"Tektur"', 'sans-serif'],
+                    },
+                },
+            },
         }
     </script>
+
 
 
 
