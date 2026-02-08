@@ -1,0 +1,49 @@
+package main
+
+import (
+	"html/template"
+	"io"
+
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
+)
+
+type Templates struct {
+	templates *template.Template
+}
+
+func (t *Templates) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
+	return t.templates.ExecuteTemplate(w, name, data)
+}
+
+func newTemplates() *Templates {
+	return &Templates{
+		templates: template.Must(template.ParseGlob("views/*.html")),
+	}
+}
+
+type Page struct {
+	Name    string
+	Tagline string
+}
+
+func main() {
+	e := echo.New()
+	e.Use(middleware.RequestLogger())
+
+	e.Renderer = newTemplates()
+
+	e.Static("/css", "css")
+	e.Static("/images", "images")
+
+	page := Page{
+		Name:    "Rajat Jaiswal",
+		Tagline: "Go • Web • HTMX",
+	}
+
+	e.GET("/", func(c echo.Context) error {
+		return c.Render(200, "index", page)
+	})
+
+	e.Logger.Fatal(e.Start(":8080"))
+}

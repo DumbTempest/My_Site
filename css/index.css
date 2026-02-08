@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Name }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body class="bg-slate-900 text-slate-100">
+  <main class="min-h-screen flex items-center justify-center">
+    <div class="text-center space-y-3">
+      <h1 class="text-4xl font-bold">{{ .Name }}</h1>
+      <p class="text-slate-400">{{ .Tagline }}</p>
+
+      <img
+        src="/images/profile.png"
+        class="mx-auto mt-6 w-32 h-32 rounded-full"
+      >
+    </div>
+  </main>
+</body>
+</html>
