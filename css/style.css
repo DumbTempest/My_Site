@@ -12,3 +12,21 @@
   background-color: #22c55e; /* green-500 */
   border-radius: 9999px;
 }
+
+.skill-pill {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-family: "Sono", monospace;
+
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}

@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -18,7 +19,7 @@
 
 </head>
 
-<body class="bg-black text-white overflow-hidden">
+<body class="bg-black text-white">
 
     <!-- background -->
     <div id="particles-js" class="fixed inset-0 z-0 pointer-events-auto"></div>
@@ -28,9 +29,10 @@
     <div id="navbar" class="relative z-20 pointer-events-auto"></div>
 
 
+
     <!-- content -->
-    <div class="relative z-10 min-h-screen flex justify-center pointer-events-none">
-        <div class="mt-40 max-w-4xl text-center px-4 pointer-events-none">
+    <div class="relative z-10 min-h-screen flex flex-col justify-center  pointer-events-none ">
+        <div class="m-40 max-w-4xl text-center px-4 pointer-events-none  ml-auto mr-auto mt-20" >
             <h1 class="text-4xl font-bold font-sono pointer-events-none">Hello! 🖖 My name is Rajat </h1>
             <p class="mt-10 text-lg font-sono text-wrap pointer-events-none">I am a <span
                     class="text-red-500 font-sono">software
@@ -57,8 +59,18 @@
                     class="hover:text-blue-400 underline pointer-events-auto">Github</a>,
                 <a href="/resume.pdf" class="hover:text-blue-400 underline pointer-events-auto">LinkedIn</a> or <a
                     href="/resume.pdf" class="hover:text-blue-400 underline pointer-events-auto">Twitter</a>.
-                    let's have some chit-chat!
+                let's have some chit-chat!
             </p>
+        </div>
+
+
+        <div class="mt-6" id="skills"></div>
+
+
+        <!-- Projects section -->
+        <div class="flex flex-col gap-6 mt-16 mb-8">
+            <h1 class="text-2xl font-bold font-sono text-center pointer-events-none">My Best Projects</h1>
+            <div id="projects"></div>
         </div>
     </div>
 
@@ -73,6 +85,16 @@
             .then(html => {
                 document.getElementById("navbar").innerHTML = html;
             });
+    </script>
+    <script>
+        fetch("/partials/projectmain.html")
+            .then(r => r.text())
+            .then(html => document.getElementById("projects").innerHTML = html)
+    </script>
+    <script>
+        fetch("/partials/skills.html")
+            .then(r => r.text())
+            .then(html => document.getElementById("skills").innerHTML = html)
     </script>
 
     <!-- tailwind shit -->
