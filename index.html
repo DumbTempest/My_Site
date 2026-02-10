@@ -22,8 +22,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-heatmap@latest/dist/cal-heatmap.css" />
-
     <link rel="stylesheet" href="css/style.css" />
 
 </head>
@@ -71,13 +69,16 @@
                 let's have some chit-chat!
             </p>
         </div>
-
-
-
+        
+        
+        
         <!-- Heatmap -->
-        <div class="mt-10 max-sm:mt-6 flex justify-center pointer-events-auto">
-            <div id="cal-heatmap"></div>
+        <div class="mt-10 max-sm:mt-6 flex justify-center">
+            <img class=" max-w-[800px] max-sm:max-w-[380px]"
+                src="https://github-readme-activity-graph.vercel.app/graph?username=DumbTempest&bg_color=000000&color=ffffff&line=22c55e&point=22c55e&hide_border=true"
+                alt="GitHub Activity Graph" />
         </div>
+
 
 
 
@@ -115,32 +116,6 @@
             .then(html => document.getElementById("skills").innerHTML = html)
     </script>
 
-    <!--heatmap script -->
-    <script src="https://cdn.jsdelivr.net/npm/cal-heatmap@latest/dist/cal-heatmap.min.js"></script>
-    <script>
-        // generate fake daily activity data for last 1 year
-        const data = {};
-        const today = new Date();
-
-        for (let i = 0; i < 365; i++) {
-            const d = new Date(today);
-            d.setDate(today.getDate() - i);
-            const key = Math.floor(d.getTime() / 1000);
-            data[key] = Math.floor(Math.random() * 6); // 0–5 intensity
-        }
-
-        const cal = new CalHeatmap();
-        cal.paint({
-            itemSelector: "#cal-heatmap",
-            domain: "year",
-            subDomain: "day",
-            data: data,
-            range: 1,
-            legend: [1, 2, 3, 4],
-        });
-    </script>
-
-
     <!-- tailwind shit -->
     <script>
         tailwind.config = {
@@ -154,6 +129,9 @@
             },
         }
     </script>
+
+
+
 
 </body>
 
