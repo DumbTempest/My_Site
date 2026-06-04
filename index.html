@@ -61,28 +61,28 @@
             </p>
 
             <p class="pt-10 font text-gray-300 text-md font-sono pointer-events-none">
-                Hit me up via <a href="https://x.com/GareebVyakti"
-                    class="hover:text-blue-400 underline pointer-events-auto">Twitter</a>, <a href="https://github.com/DumbTempest"
+                Hit me up via <a href="https://github.com/DumbTempest"
                     class="hover:text-blue-400 underline pointer-events-auto">Github</a>,
-                <a href="https://www.linkedin.com/in/rajat-jaiswal-b513032b2/" class="hover:text-blue-400 underline pointer-events-auto">LinkedIn</a> or <a
-                    href="https://x.com/GareebVyakti" class="hover:text-blue-400 underline pointer-events-auto">Twitter</a>.
+                <a href="https://www.linkedin.com/in/rajat-jaiswal-b513032b2/"
+                    class="hover:text-blue-400 underline pointer-events-auto">LinkedIn</a> or <a
+                    href="https://x.com/GareebVyakti"
+                    class="hover:text-blue-400 underline pointer-events-auto">Twitter</a>.
                 let's have some chit-chat!
             </p>
         </div>
-        
-        
-        
+
+
+
         <!-- Heatmap -->
-        <div class="mt-10 max-sm:mt-6 flex justify-center">
+        <!-- <div class="mt-10 max-sm:mt-6 flex justify-center">
             <img class=" max-w-4xl max-sm:max-w-[380px]"
                 src="https://github-readme-activity-graph.vercel.app/graph?username=DumbTempest&bg_color=000000&color=ffffff&line=22c55e&point=22c55e&hide_border=true"
                 alt="GitHub Activity Graph" />
-        </div>
+        </div> -->
 
+        <div class="mt-5" id="contribution"></div>
 
-
-
-
+        <!-- skills section -->
         <div class="mt-6" id="skills"></div>
 
 
@@ -103,6 +103,13 @@
             .then(res => res.text())
             .then(html => {
                 document.getElementById("navbar").innerHTML = html;
+            });
+    </script>
+    <script>
+        fetch("/partials/contribution.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("contribution").innerHTML = html;
             });
     </script>
     <script>
